@@ -1,5 +1,5 @@
 // initialize the app
-var myapp = angular.module('myapp', ['ngSanitize']);
+var myapp = angular.module('myapp', ['ngSanitize', 'simplePagination']);
  
 // set the configuration
 myapp.run(['$rootScope', function($rootScope){
@@ -10,7 +10,9 @@ myapp.run(['$rootScope', function($rootScope){
 }]);
  
 // add a controller
-myapp.controller('mycontroller', ['$scope', '$http', function($scope, $http) {
+myapp.controller('mycontroller', ['$scope', '$http', 'Pagination', function($scope, $http, Pagination) {
+
+
   // load posts from the WordPress API
   $http({
     method: 'GET',
@@ -21,6 +23,8 @@ myapp.controller('mycontroller', ['$scope', '$http', function($scope, $http) {
   }).success(function(data, status, headers, config) {
     console.log(data.posts);
     $scope.postdata = data.posts;
+    $scope.pagination = Pagination.getNew(3);
+    $scope.pagination.numPages = Math.ceil($scope.postdata.length/$scope.pagination.perPage);
   }).error(function(data, status, headers, config) {
   });
 

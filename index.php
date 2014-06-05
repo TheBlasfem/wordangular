@@ -58,7 +58,7 @@ get_header(); ?>
 				<option ng-repeat="category in categorydata">{{category.title}}</option>
 			</select>
 		  <!-- display all post titles in a list -->
-		    <div ng-repeat="post in postdata | filter:search | filter:searchcategory">
+		    <div ng-repeat="post in postdata | filter:search | filter:searchcategory | startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage">
 					<h3>{{post.title}}</h3></br>
 					<b>Category:</b> 
 					<ul>
@@ -67,6 +67,8 @@ get_header(); ?>
 					<div ng-bind-html="post.content | limitTo:150"></div>
 					<a href="{{post.url}}">Seguir leyendo</a>
 		    </div>
+		    <button ng-click="pagination.prevPage()">Previous</button>
+				<button ng-click="pagination.nextPage()">Next</button>
 		</div>
 
 		</div><!-- #content -->

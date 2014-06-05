@@ -526,13 +526,18 @@ function mytheme_enqueue_scripts() {
 
   //angular sanitize
   wp_register_script('angular-sanitize', 'https://code.angularjs.org/1.2.16/angular-sanitize.min.js', array(), null, false);
+
+  // register our simplePagination.js
+  wp_register_script('angular-simplepagination', get_bloginfo('template_directory').'/simplePagination.js', array('angular-core'), null, false);
  
   // register our app.js, which has a dependency on angular-core
   wp_register_script('angular-app', get_bloginfo('template_directory').'/app.js', array('angular-core'), null, false);
  
+   
   // enqueue all scripts
   wp_enqueue_script('angular-core');
   wp_enqueue_script('angular-sanitize');
+  wp_enqueue_script('angular-simplepagination');
   wp_enqueue_script('angular-app');
  
   // we need to create a JavaScript variable to store our API endpoint...   
