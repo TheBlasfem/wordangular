@@ -19,7 +19,21 @@ myapp.controller('mycontroller', ['$scope', '$http', function($scope, $http) {
       json: 'get_posts'
     }
   }).success(function(data, status, headers, config) {
+    console.log(data.posts);
     $scope.postdata = data.posts;
   }).error(function(data, status, headers, config) {
   });
+
+  // load categories from the WordPress API
+  $http({
+    method: 'GET',
+    url: $scope.api, // derived from the rootScope
+    params: {
+      json: 'get_category_index'
+    }
+  }).success(function(data, status, headers, config) {
+    $scope.categorydata = data.categories;
+  }).error(function(data, status, headers, config) {
+  });
+
 }]);

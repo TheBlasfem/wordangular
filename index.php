@@ -53,9 +53,17 @@ get_header(); ?>
 
 		<div ng-controller="mycontroller">
 			<input type="text" ng-model="search" placeholder="Buscar...">
+			<label>Select Category</label>
+			<select ng-model="searchcategory">
+				<option ng-repeat="category in categorydata">{{category.title}}</option>
+			</select>
 		  <!-- display all post titles in a list -->
-		    <div ng-repeat="post in postdata | filter:search">
-					<h3>{{post.title}}</h3>
+		    <div ng-repeat="post in postdata | filter:search | filter:searchcategory">
+					<h3>{{post.title}}</h3></br>
+					<b>Category:</b> 
+					<ul>
+						<li ng-repeat="category in post.categories">{{category.title}}</li>
+					</ul>
 					<div ng-bind-html="post.content | limitTo:150"></div>
 					<a href="">Seguir leyendo</a>
 		    </div>
