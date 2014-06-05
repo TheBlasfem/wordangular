@@ -65,7 +65,7 @@ get_header(); ?>
 						<li ng-repeat="category in post.categories">{{category.title}}</li>
 					</ul>
 					<div ng-bind-html="post.content | limitTo:150"></div>
-					<a href="">Seguir leyendo</a>
+					<a href="{{post.url}}">Seguir leyendo</a>
 		    </div>
 		</div>
 
