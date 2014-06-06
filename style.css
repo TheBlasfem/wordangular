@@ -4228,3 +4228,31 @@ a.post-thumbnail:hover {
 		line-height: 36px;
 	}
 }
+
+#blqs{
+	width: 100%;
+	overflow: hidden;
+}
+
+.blq{
+	width: 200px;
+	padding: 15px;
+	min-height: 300px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	background: #fff;
+	float: left;
+	margin: 15px 0 15px 15px;
+}
+
+#content, #primary{
+	background:#F5F5F5 !important;
+	padding-left: 25px;
+	padding-bottom: 15px;
+}
+
+.site-main{
+	background: #f5f5f5;
+}
