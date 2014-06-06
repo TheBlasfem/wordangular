@@ -52,14 +52,15 @@ get_header(); ?>
 		?>
 
 		<div ng-controller="mycontroller">
-			<input type="text" ng-model="search" placeholder="Buscar...">
+			<input type="text" ng-model="search" placeholder="Search...">
 			<label>Select Category</label>
 			<select ng-model="searchcategory">
-				<option ng-repeat="category in categorydata">{{category.title}}</option>
+				<option value="">--All--</option>
+				<option ng-repeat="category in categories">{{category.title}}</option>
 			</select>
-		  <!-- display all post titles in a list -->
+
 		  <section id="blqs">
-		    <div class="blq" ng-repeat="post in postdata | filter:search | filter:searchcategory | startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage">
+		    <div class="blq" ng-repeat="post in posts | filter:search | filter:searchcategory | startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage">
 					<div class="greencat">
 						<span ng-repeat="category in post.categories">{{category.title}}</span>
 					</div>
@@ -69,6 +70,7 @@ get_header(); ?>
 					<a href="{{post.url}}">Seguir leyendo</a>
 		    </div>
 		  </section>
+
 		    <button ng-click="pagination.prevPage()">Previous</button>
 				<button ng-click="pagination.nextPage()">Next</button>
 		</div>
