@@ -60,11 +60,11 @@ get_header(); ?>
 		  <!-- display all post titles in a list -->
 		  <section id="blqs">
 		    <div class="blq" ng-repeat="post in postdata | filter:search | filter:searchcategory | startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage">
+					<div class="greencat">
+						<span ng-repeat="category in post.categories">{{category.title}}</span>
+					</div>
+					<img ng-src="{{post.thumbnail}}" alt="">
 					<h3>{{post.title}}</h3></br>
-					<b>Category:</b> 
-					<ul>
-						<li ng-repeat="category in post.categories">{{category.title}}</li>
-					</ul>
 					<div ng-bind-html="post.content | limitTo:50"></div>
 					<a href="{{post.url}}">Seguir leyendo</a>
 		    </div>

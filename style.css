@@ -4236,15 +4236,40 @@ a.post-thumbnail:hover {
 
 .blq{
 	width: 200px;
-	padding: 15px;
 	min-height: 300px;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-o-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	background: #fff;
 	float: left;
-	margin: 15px 0 15px 15px;
+	margin: 25px 0 25px 25px;
+	box-shadow: 3px 3px 5px #ccc;
+	-webkit-box-shadow: 3px 3px 5px #ccc;
+	-moz-box-shadow: 3px 3px 5px #ccc;
+	-o-box-shadow: 3px 3px 5px #ccc;
+	position: relative;
+}
+
+.blq h3{
+	margin-top: 15px !important;
+}
+
+.blq h3, .blq p, .blq a{
+	padding-left: 15px;
+}
+
+.blq .greencat{
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #41A62A;
+	padding: 5px 8px;
+	color: #fff;
+}
+
+.blq img{
+	width: 100%;
+}
+
+#blqs .blq:nth-child(3n-2){
+	margin-left: 0px !important;
 }
 
 #content, #primary{
