@@ -6,6 +6,7 @@ angular.module('myapp', ['ngSanitize', 'simplePagination'])
     $rootScope.api = AppAPI.url;
   }])
   .controller('mycontroller', ['$scope', '$http', 'Pagination', function($scope, $http, Pagination) {
+
     // load posts from the WordPress API
     $http({
       method: 'GET',
@@ -29,5 +30,15 @@ angular.module('myapp', ['ngSanitize', 'simplePagination'])
     }).success(function(data) {
       $scope.categories = data.categories;
     });
+
+    //popup content
+    $scope.detailpost = function(post){
+      $scope.openpopup = true;
+      $scope.post = post;
+    };
+
+    $scope.closedetail = function(){
+      $scope.openpopup = false;
+    }
 
   }]);

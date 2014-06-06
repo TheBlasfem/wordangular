@@ -52,6 +52,7 @@ get_header(); ?>
 		?>
 
 		<div ng-controller="mycontroller">
+			<div id="backgroundpop" ng-class="{display: openpopup}"></div>
 			<input type="text" ng-model="search" placeholder="Search...">
 			<label>Select Category</label>
 			<select ng-model="searchcategory">
@@ -67,12 +68,20 @@ get_header(); ?>
 					<img ng-src="{{post.thumbnail}}" alt="">
 					<h3>{{post.title}}</h3></br>
 					<div ng-bind-html="post.content | limitTo:50"></div>
-					<a href="{{post.url}}">Seguir leyendo</a>
+					<span class="detail" ng-click="detailpost(post)">Seguir leyendo</span>
 		    </div>
 		  </section>
 
 		    <button ng-click="pagination.prevPage()">Previous</button>
 				<button ng-click="pagination.nextPage()">Next</button>
+
+				<div id="popup" ng-show="openpopup">
+					<div class="closebutton" ng-click="closedetail()">X</div>
+				 	<img ng-src="{{post.thumbnail}}" alt="">
+					<h3>{{post.title}}</h3>
+					<div ng-bind-html="post.content"></div>
+				</div>
+				
 		</div>
 
 		</div><!-- #content -->
