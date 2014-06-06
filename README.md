@@ -9,4 +9,4 @@ Then, we need the scripts of angularjs and modules, they are defined at the bott
 
 All magic happen in app.js
 
-By the way, the actually theme is the default twentyfourteen, so don't scare with lot of files
+By the way, the actually theme is the default twentyfourteen, so don't scare with lot of files, just focus in index.php
