@@ -5,6 +5,12 @@ angular.module('myapp', ['ngSanitize', 'simplePagination'])
     //created by wp_localize_script() in functions.php, and stored in the Angular rootScope
     $rootScope.api = AppAPI.url;
   }])
+  .directive('popup', function(){
+    return {
+      restrict: 'E',
+      templateUrl: BlogInfo.url + 'popup.html'
+    }
+  })
   .controller('mycontroller', ['$scope', '$http', 'Pagination', function($scope, $http, Pagination) {
 
     // load posts from the WordPress API

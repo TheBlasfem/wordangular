@@ -75,13 +75,8 @@ get_header(); ?>
 		    <button ng-click="pagination.prevPage()">Previous</button>
 				<button ng-click="pagination.nextPage()">Next</button>
 
-				<div id="popup" ng-show="openpopup">
-					<div class="closebutton" ng-click="closedetail()">X</div>
-				 	<img ng-src="{{post.thumbnail}}" alt="">
-					<h3>{{post.title}}</h3>
-					<div ng-bind-html="post.content"></div>
-				</div>
-				
+				<popup></popup>
+
 		</div>
 
 		</div><!-- #content -->
