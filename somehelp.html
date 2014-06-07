@@ -1,0 +1,34 @@
+<div id="wrapperapp" ng-controller="mycontroller">
+			
+			<div id="backgroundpop" ng-class="{display: openpopup}"></div>
+			<input type="text" ng-model="search" placeholder="Search...">
+			<label>Select Category</label>
+			<select ng-model="searchcategory">
+				<option value="">--All--</option>
+				<option ng-repeat="category in categories">{{category.title}}</option>
+			</select>
+
+		  <section id="blqs">
+		    <div class="blq" ng-repeat="post in posts | filter:search | filter:searchcategory | startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage">
+					<div class="greencat">
+						<span ng-repeat="category in post.categories">{{category.title}}</span>
+					</div>
+					<img ng-src="{{post.thumbnail}}" alt="">
+					<h3>{{post.title}}</h3>
+					<div ng-bind-html="post.content | limitTo:70"></div>
+					<span class="detail" ng-click="detailpost(post)">Seguir leyendo</span>
+		    </div>
+		  </section>
+
+		  <button ng-click="pagination.prevPage()">Previous</button>
+			<button ng-click="pagination.nextPage()">Next</button>
+
+      <!-- Popup -->
+			<div id="popup" ng-show="openpopup">
+        <div class="closebutton" ng-click="closedetail()">X</div>
+        <h3>{{post.title}}</h3>
+        <img ng-src="{{post.thumbnail_images.full.url}}" alt="">
+        <div ng-bind-html="post.content"></div>
+      </div>
+
+</div>
