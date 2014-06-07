@@ -66,8 +66,8 @@ get_header(); ?>
 						<span ng-repeat="category in post.categories">{{category.title}}</span>
 					</div>
 					<img ng-src="{{post.thumbnail}}" alt="">
-					<h3>{{post.title}}</h3></br>
-					<div ng-bind-html="post.content | limitTo:50"></div>
+					<h3>{{post.title}}</h3>
+					<div ng-bind-html="post.content | limitTo:70"></div>
 					<span class="detail" ng-click="detailpost(post)">Seguir leyendo</span>
 		    </div>
 		  </section>

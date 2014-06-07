@@ -22,7 +22,7 @@ angular.module('myapp', ['ngSanitize', 'simplePagination'])
       }
     }).success(function(data) {
       $scope.posts = data.posts;
-      $scope.pagination = Pagination.getNew(3);
+      $scope.pagination = Pagination.getNew(4);
       $scope.pagination.numPages = Math.ceil($scope.posts.length/$scope.pagination.perPage);
     });
 
@@ -39,7 +39,6 @@ angular.module('myapp', ['ngSanitize', 'simplePagination'])
 
     //popup content
     $scope.detailpost = function(post){
-      console.log(post);
       $scope.openpopup = true;
       $scope.post = post;
     };

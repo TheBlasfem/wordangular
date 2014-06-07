@@ -4236,7 +4236,7 @@ a.post-thumbnail:hover {
 
 .blq{
 	width: 200px;
-	min-height: 300px;
+	min-height: 305px;
 	background: #fff;
 	float: left;
 	margin: 25px 0 25px 25px;
@@ -4245,6 +4245,10 @@ a.post-thumbnail:hover {
 	-moz-box-shadow: 3px 3px 5px #ccc;
 	-o-box-shadow: 3px 3px 5px #ccc;
 	position: relative;
+}
+
+.blq p{
+	padding-top: 0px !important;
 }
 
 .blq h3{
@@ -4274,7 +4278,7 @@ a.post-thumbnail:hover {
 	width: 100%;
 }
 
-#blqs .blq:nth-child(3n-2){
+#blqs .blq:nth-child(4n-3){
 	margin-left: 0px !important;
 }
 
