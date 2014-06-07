@@ -51,7 +51,7 @@ get_header(); ?>
 			//endif;
 		?>
 
-		<div ng-controller="mycontroller">
+		<div id="wrapperapp" ng-controller="mycontroller">
 			<div id="backgroundpop" ng-class="{display: openpopup}"></div>
 			<input type="text" ng-model="search" placeholder="Search...">
 			<label>Select Category</label>

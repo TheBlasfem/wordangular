@@ -4229,6 +4229,15 @@ a.post-thumbnail:hover {
 	}
 }
 
+#wrapperapp button{
+	position: absolute;
+	top: 80%;
+}
+
+#wrapperapp button:nth-of-type(2){
+	left: 410px;
+}
+
 #blqs{
 	width: 100%;
 	overflow: hidden;
