@@ -4301,6 +4301,18 @@ a.post-thumbnail:hover {
 	overflow-y: scroll; 
 }
 
+#popup h3{
+	text-align: center;
+	font-size: 25px;
+	line-height: 45px;
+}
+
+#popup img{
+	width: 35%;
+	float: left;
+	margin-right: 20px;
+}
+
 #popup .closebutton{
 	position: absolute;
 	right: 0;

@@ -1,6 +1,6 @@
 <div id="popup" ng-show="openpopup">
 	<div class="closebutton" ng-click="closedetail()">X</div>
-	<img ng-src="{{post.thumbnail}}" alt="">
 	<h3>{{post.title}}</h3>
+	<img ng-src="{{post.thumbnail_images.full.url}}" alt="">
 	<div ng-bind-html="post.content"></div>
 </div>

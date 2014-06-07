@@ -39,6 +39,7 @@ angular.module('myapp', ['ngSanitize', 'simplePagination'])
 
     //popup content
     $scope.detailpost = function(post){
+      console.log(post);
       $scope.openpopup = true;
       $scope.post = post;
     };
